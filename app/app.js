@@ -12,9 +12,7 @@
     };
   });
   
-  app.controller('TabController', function(){
-  
-  });
+
   
   app.controller('ReviewController', function(){
 	this.review = {};
@@ -24,6 +22,19 @@
     this.review = {};
     };
   });
+
+  app.directive('productGallery', function(){
+      return {
+          restrict: 'E',
+          templateUrl: './product-gallery.html',
+          controller: function(){
+               this.current = 0;
+               this.setCurrent = function(value){
+               this.current = value || 0;
+    };
+          }
+      }
+  })
 
   app.directive("productDescription", function(){
 		return {
